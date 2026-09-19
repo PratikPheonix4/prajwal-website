@@ -2,6 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const App = () => {
   const [activeLink, setActiveLink] = useState('');
+const [showVideo, setShowVideo] = useState(false);
+
+const openVideo = () => {
+  setShowVideo(true);
+};
+
+const closeVideo = () => {
+  setShowVideo(false);
+};
 
   // Handle scroll to update active nav link
   useEffect(() => {
@@ -79,7 +88,7 @@ const App = () => {
           <p className="hero-subheading">PRAJWAL fixes that.</p>
           <div className="hero-buttons">
             <a href="#" className="btn-primary">View the Opportunity →</a>
-            <a href="#" className="btn-outline">Watch Demo</a>
+            <a href="#" className="btn-outline" onClick={openVideo}>Watch Demo</a>
           </div>
           <div className="stats-row">
             <div className="stat-item fade-in">
@@ -517,21 +526,14 @@ const App = () => {
               <div className="founder-title">Solo Founder · Bhubaneswar, Odisha</div>
               <p className="founder-quote fade-in">
                 "I saw tourists walk away from market stalls in Puri because they couldn't pay.
-                I built PRAJWAL in 6 days with zero funding to prove the problem is solvable.
-                <br /><br />
-                I've driven Rapido to survive while building this.
-                My father had a stroke last year.
-                I'm building this to change what's possible from a tier-2 city in India."
+                I built PRAJWAL to fix that — starting from Bhubaneswar, Odisha, with zero
+                funding and everything to prove."
               </p>
               <div className="founder-footer fade-in">
                 <div className="contact-info fade-in">
                   <div className="contact-item fade-in">
                     <span>📧</span>
                     <span>prateekgwip988@gmail.com</span>
-                  </div>
-                  <div className="contact-item fade-in">
-                    <span>💼</span>
-                    <span>LinkedIn: <a href="#" >[LinkedIn URL]</a></span>
                   </div>
                 </div>
               </div>
@@ -553,6 +555,48 @@ const App = () => {
           </div>
         </div>
       </footer>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="video-modal" style={{
+          display: 'flex',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0,0,0,0.9)',
+          zIndex: 9999,
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <div style={{
+            position: 'relative',
+            maxWidth: '400px',
+            width: '90%'
+          }}>
+            <button onClick={closeVideo} style={{
+              position: 'absolute',
+              top: '-40px',
+              right: 0,
+              background: 'none',
+              border: 'none',
+              color: '#fff',
+              fontSize: '24px',
+              cursor: 'pointer'
+            }}>
+              ✕ Close
+            </button>
+            <video id="demoVideo" controls style={{
+              width: '100%',
+              borderRadius: '12px'
+            }}>
+              <source src="demo.mp4" type="video/mp4" />
+              Your browser does not support video.
+            </video>
+          </div>
+        </div>
+      )}
     </>
   );
 };
