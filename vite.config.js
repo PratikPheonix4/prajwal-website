@@ -4,12 +4,5 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 3000,
-  },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./"),
-    },
-  },
-});
+  base: '/prajwal-website/', // Must match your GitHub repository name exactly
+})
