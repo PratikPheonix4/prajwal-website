@@ -525,9 +525,11 @@ const closeVideo = () => {
               <div className="founder-name">Pratik Pati</div>
               <div className="founder-title">Solo Founder · Bhubaneswar, Odisha</div>
               <p className="founder-quote fade-in">
-                "I saw tourists walk away from market stalls in Puri because they couldn't pay.
-                I built PRAJWAL to fix that — starting from Bhubaneswar, Odisha, with zero
-                funding and everything to prove."
+                "India's payment infrastructure is world-class. 
+But millions of visitors are locked out of it 
+every day. I built PRAJWAL because the solution 
+was obvious — and nobody had built it yet. 
+That changes now."
               </p>
               <div className="founder-footer fade-in">
                 <div className="contact-info fade-in">
