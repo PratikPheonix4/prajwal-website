@@ -525,9 +525,10 @@ const closeVideo = () => {
               <div className="founder-name">Pratik Pati</div>
               <div className="founder-title">Solo Founder · Bhubaneswar, Odisha</div>
               <p className="founder-quote fade-in">
-                "I saw tourists walk away from market stalls in Puri because they couldn't pay.
-                I built PRAJWAL to fix that — starting from Bhubaneswar, Odisha, with zero
-                funding and everything to prove."
+                "India's payment infrastructure is world-class.
+                But millions of visitors are locked out of it every day.
+                I built PRAJWAL because the solution was obvious — and nobody had built it yet.
+                That changes now."
               </p>
               <div className="founder-footer fade-in">
                 <div className="contact-info fade-in">
@@ -587,13 +588,30 @@ const closeVideo = () => {
             }}>
               ✕ Close
             </button>
-            <video id="demoVideo" controls style={{
+            <div style={{
+              position: 'relative',
               width: '100%',
+              paddingTop: '56.25%', // 16:9 Aspect Ratio
+              height: 0,
+              overflow: 'hidden',
               borderRadius: '12px'
             }}>
-              <source src="demo.mp4" type="video/mp4" />
-              Your browser does not support video.
-            </video>
+              <iframe
+                id="demoVideo"
+                src="https://www.youtube.com/embed/v97-w51wKwQ"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+            </div>
           </div>
         </div>
       )}
