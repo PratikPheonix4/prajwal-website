@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | PRAJWAL</title>
+<meta name="description" content="Get in touch with the PRAJWAL team.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="/">PRAJWAL</a><a class="back" href="/">Back to home</a></div></header>
+<main><div class="wrap">
+<h1>Contact us</h1>
+<p class="lede">Questions, partnership ideas, or merchant enquiries. We read every message.</p>
+<p class="updated">We usually reply within 2 business days.</p>
+<div class="grid">
+<div><h2>Email</h2><p><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p></div>
+<div><h2>Location</h2><p>Bhubaneswar, Odisha, India</p></div>
+</div>
+<form id="f" novalidate>
+<label for="name">Your name</label><input id="name" name="name" autocomplete="name" required>
+<label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required>
+<label for="topic">What is this about?</label>
+<select id="topic"><option>General question</option><option>Merchant or partnership</option><option>Investor or media</option><option>Privacy request</option><option>Report a problem</option></select>
+<label for="msg">Message</label><textarea id="msg" name="msg" required></textarea>
+<button type="submit">Send message</button>
+<p class="status" id="s" role="status"></p>
+</form>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+e.preventDefault();
+var n=name.value.trim(),m=email.value.trim(),b=msg.value.trim(),s=document.getElementById('s');
+if(!n||!/^\S+@\S+\.\S+$/.test(m)||!b){s.textContent='Please fill in your name, a valid email and a message.';return}
+var body=b+'\n\n'+n+' ('+m+')';
+location.href='mailto:hello@yourdomain.com?subject='+encodeURIComponent('[PRAJWAL] '+topic.value)+'&body='+encodeURIComponent(body);
+s.textContent='Opening your email app. If nothing opens, write to hello@yourdomain.com.';
+});
+</script>
+</div></main>
+<footer><div class="wrap">
+<div><a class="brand" href="/">PRAJWAL</a><p class="tag">Payment Revealed Across Journeys With A Light</p></div>
+<nav aria-label="Footer"><a href="contact.html" aria-current="page">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<div class="copy">&copy; 2026 PRAJWAL &middot; Bhubaneswar, Odisha, India</div>
+</div></footer>
+</body></html>
